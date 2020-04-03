@@ -1,7 +1,7 @@
 const isFunction = function(o){ return typeof o === 'function'; };
 const defaults = require('./defaults');
 const assign = require('./assign');
-const dagre = require('dagre');
+const dagre = require('dagre-cluster-fix');
 
 // constructor
 // options : object containing layout options
@@ -75,9 +75,7 @@ DagreLayout.prototype.run = function(){
   }
 
   // add edges to dagre
-  let edges = eles.edges().stdFilter(function( edge ){
-    return !edge.source().isParent() && !edge.target().isParent(); // dagre can't handle edges on compound nodes
-  });
+  let edges = eles.edges();
   for( let i = 0; i < edges.length; i++ ){
     let edge = edges[i];
 

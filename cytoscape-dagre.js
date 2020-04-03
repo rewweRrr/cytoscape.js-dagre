@@ -1,12 +1,12 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("dagre"));
+		module.exports = factory(require("dagre-cluster-fix"));
 	else if(typeof define === 'function' && define.amd)
-		define(["dagre"], factory);
+		define(["dagre-cluster-fix"], factory);
 	else if(typeof exports === 'object')
-		exports["cytoscapeDagre"] = factory(require("dagre"));
+		exports["cytoscapeDagre"] = factory(require("dagre-cluster-fix"));
 	else
-		root["cytoscapeDagre"] = factory(root["dagre"]);
+		root["cytoscapeDagre"] = factory(root["dagre-cluster-fix"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_4__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -176,9 +176,7 @@ DagreLayout.prototype.run = function () {
   }
 
   // add edges to dagre
-  var edges = eles.edges().stdFilter(function (edge) {
-    return !edge.source().isParent() && !edge.target().isParent(); // dagre can't handle edges on compound nodes
-  });
+  var edges = eles.edges();
   for (var _i2 = 0; _i2 < edges.length; _i2++) {
     var edge = edges[_i2];
 

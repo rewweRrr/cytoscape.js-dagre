@@ -1,6 +1,6 @@
 {
-  "name": "cytoscape-dagre",
-  "version": "2.2.2",
+  "name": "cytoscape-dagre-cluster-fix",
+  "version": "2.2.4",
   "description": "The Dagre layout for DAGs and trees for Cytoscape.js",
   "main": "cytoscape-dagre.js",
   "author": {
@@ -54,6 +54,6 @@
     "cytoscape": "^3.2.0"
   },
   "dependencies": {
-    "dagre-cluster-fix": "^0.9.2"
+    "dagre-cluster-fix": "^0.9.3"
   }
 }
